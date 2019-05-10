@@ -5,10 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PowerPoint_Interop_PoC"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="PowerPoint Interop PoC" Height="110" Width="250">
     <Grid Name="pnlMainGrid">
-        <Label x:Name="lblSlide" Content="Current slide:" HorizontalAlignment="Left" Margin="25,25,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name ="cbSlides" HorizontalAlignment="Left" Margin="110,29,0,0" VerticalAlignment="Top" Width="120" />
-        <Button x:Name="btnBackgroundcolour" Content="Set background colour" HorizontalAlignment="Left" Margin="25,75,0,0" VerticalAlignment="Top" Width="140"/>
+        <Grid Margin="10,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <Label x:Name="lblSlide" Content="Current slide:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <ComboBox x:Name ="cbSlides" HorizontalAlignment="Right" VerticalAlignment="Center" Width="120" />
+        </Grid>
+        <Button x:Name="btnBackgroundcolour" Content="Toggle background colour" Margin="0,0,0,10" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>

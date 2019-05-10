@@ -52,7 +52,18 @@ namespace PowerPoint_Interop_PoC
         {
             PowerPoint.Slide currentSlide = slides[slideShowWindow.View.CurrentShowPosition];
             currentSlide.FollowMasterBackground = MsoTriState.msoFalse;
-            currentSlide.Background.Fill.ForeColor.RGB = ColorTranslator.ToOle(Color.Red);
+
+            PowerPoint.ColorFormat backgroundColor = currentSlide.Background.Fill.ForeColor;
+
+            Console.WriteLine(backgroundColor.RGB);
+            if (backgroundColor.RGB == ColorTranslator.ToOle(Color.White))
+            {
+                backgroundColor.RGB = ColorTranslator.ToOle(Color.LightSteelBlue);
+            }
+            else
+            {
+                backgroundColor.RGB = ColorTranslator.ToOle(Color.White);
+            }
         }
 
         private void Application_SlideShowNextSlide(PowerPoint.SlideShowWindow Wn)
