@@ -1,0 +1,14 @@
+﻿<Window x:Class="PowerPoint_Interop_PoC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PowerPoint_Interop_PoC"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Name="pnlMainGrid">
+        <Label x:Name="lblSlide" Content="Current slide:" HorizontalAlignment="Left" Margin="25,25,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name ="cbSlides" HorizontalAlignment="Left" Margin="110,29,0,0" VerticalAlignment="Top" Width="120" />
+        <Button x:Name="btnBackgroundcolour" Content="Set background colour" HorizontalAlignment="Left" Margin="25,75,0,0" VerticalAlignment="Top" Width="140"/>
+    </Grid>
+</Window>
