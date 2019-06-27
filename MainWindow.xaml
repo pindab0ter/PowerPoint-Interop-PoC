@@ -11,6 +11,6 @@
             <Label x:Name="lblSlide" Content="Current slide:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <ComboBox x:Name ="cbSlides" HorizontalAlignment="Right" VerticalAlignment="Center" Width="120" />
         </Grid>
-        <Button x:Name="btnBackgroundcolour" Content="Toggle background colour" Margin="0,0,0,10" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <Button x:Name="btnBackgroundColor" Content="Toggle background color" Margin="0,0,0,10" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>
