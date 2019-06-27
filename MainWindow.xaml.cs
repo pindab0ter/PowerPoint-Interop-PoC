@@ -103,6 +103,7 @@ namespace PowerPoint_Interop_PoC
 
         private void OnPresentationClose(PowerPoint.Presentation Pres)
         {
+            Pres.Saved = MsoTriState.msoTrue;
             Pres.RejectAll();
             this.Dispatcher.Invoke(() =>
             {
