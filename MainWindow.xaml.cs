@@ -47,6 +47,7 @@ namespace PowerPoint_Interop_PoC
             cbSlides.SelectionChanged += ComboBox_SelectionChanged;
             btnBackgroundColor.Click += BtnBackgroundColor_Click;
             powerPoint.SlideShowNextSlide += OnSlideShowNextSlide;
+            powerPoint.PresentationClose += OnPresentationClose;
         }
 
         //
@@ -76,6 +77,15 @@ namespace PowerPoint_Interop_PoC
             }
         }
 
+        protected override void OnClosed(EventArgs e)
+        {
+            if (powerPoint != null)
+            {
+                powerPoint.Quit();
+            }
+            base.OnClosed(e);
+        }
+
         //
         // PowerPoint Events
         //
@@ -88,6 +98,15 @@ namespace PowerPoint_Interop_PoC
             this.Dispatcher.Invoke(() =>
             {
                 cbSlides.SelectedIndex = currentShowPosition - 1;
+            });
+        }
+
+        private void OnPresentationClose(PowerPoint.Presentation Pres)
+        {
+            Pres.RejectAll();
+            this.Dispatcher.Invoke(() =>
+            {
+                Application.Current.Shutdown();
             });
         }
     }
