@@ -1,4 +1,4 @@
-using System.Windows;
+﻿using System.Windows;
 using Microsoft.Office.Core;
 using PowerPoint = Microsoft.Office.Interop.PowerPoint;
 using System;
@@ -105,7 +105,6 @@ namespace PowerPoint_Interop_PoC
         private void OnPresentationClose(PowerPoint.Presentation Pres)
         {
             Pres.Saved = MsoTriState.msoTrue;
-            Pres.RejectAll();
             this.Dispatcher.Invoke(() =>
             {
                 Application.Current.Shutdown();
