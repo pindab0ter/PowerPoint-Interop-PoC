@@ -1,4 +1,4 @@
-﻿using System.Windows;
+using System.Windows;
 using Microsoft.Office.Core;
 using PowerPoint = Microsoft.Office.Interop.PowerPoint;
 using System;
@@ -23,8 +23,9 @@ namespace PowerPoint_Interop_PoC
         public MainWindow()
         {
             InitializeComponent();
-            string path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
 
+            // Start the PowerPoint presentation
+            string path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
             presentation = powerPoint.Presentations.Open(path + @"\presentation.pptx", ReadOnly: MsoTriState.msoTrue, WithWindow: MsoTriState.msoFalse);
             slideShowSettings = presentation.SlideShowSettings;
             slideShowSettings.Run();
@@ -39,7 +40,6 @@ namespace PowerPoint_Interop_PoC
                 {
                     cbSlides.Items.Add(slide.Name);
                 }
-
                 cbSlides.SelectedIndex = 0;
             });
 
@@ -95,6 +95,7 @@ namespace PowerPoint_Interop_PoC
             int currentShowPosition = Wn.View.CurrentShowPosition;
             Console.WriteLine($"User triggered next to move to the next slide ({currentShowPosition})");
 
+            // Update combobox selection
             this.Dispatcher.Invoke(() =>
             {
                 cbSlides.SelectedIndex = currentShowPosition - 1;
