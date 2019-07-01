@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PowerPoint_Interop_PoC"
         mc:Ignorable="d"
-        Title="PowerPoint Interop PoC" Height="110" Width="250">
+        Title="PPT PoC" Height="110" Width="250">
     <Grid Name="pnlMainGrid">
         <Grid Margin="10,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Stretch">
             <Label x:Name="lblSlide" Content="Current slide:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
